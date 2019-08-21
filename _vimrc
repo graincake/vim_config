@@ -252,6 +252,14 @@
     nnoremap _ :resize -1<cr>
     nnoremap > :vertical resize +1<cr>
     nnoremap < :vertical resize -1<cr>
+
+    "使用系统剪贴板
+    vmap <Leader>c "+y
+    nmap <Leader>c "+y
+    nmap <Leader>v "+p
+    "set term=screen
+    nmap <Leader>j :let @/=expand("<cword>")<CR>
+
 " }
 
 " Vim UI {
