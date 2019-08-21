@@ -337,7 +337,11 @@
 
     " GVIM- (here instead of .gvimrc)
     if has('gui_running')
-        set guioptions-=T           " Remove the toolbar
+        set guioptions-=T       " gvim不包含工具栏
+        set guioptions-=m       " gvim不使用菜单栏
+        set guioptions-=r       " gvim不显示右边滚动条
+        set guioptions-=l       " gvim不显示左边滚动条
+
         set lines=40                " 40 lines of text instead of 24
         if !exists("g:spf13_no_big_font")
             if LINUX() && has("gui_running")
