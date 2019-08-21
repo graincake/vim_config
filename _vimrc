@@ -432,6 +432,8 @@
         Plug 'kana/vim-textobj-function', { 'for':['c', 'cpp', 'vim', 'java'] }
         Plug 'sgur/vim-textobj-parameter'
 
+        Plug 'justinmk/vim-dirvish'
+
     call plug#end()
 " }
 
