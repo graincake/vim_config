@@ -423,6 +423,7 @@
         Plug 'vim-scripts/std_c.zip'
         " restore_view confict with gutentags to not find ctags
         "Plug 'vim-scripts/restore_view.vim'
+        Plug 'skywind3000/asyncrun.vim'
 
     call plug#end()
 " }
@@ -558,6 +559,45 @@
 
     " Omnicppcomplete {
         set completeopt=menu                        "关闭预览窗口
+    " }
+    " asyncrun.vim {
+        " 自动打开 quickfix window ，高度为 6
+        let g:asyncrun_open = 6
+        " 任务结束时候响铃提醒
+        let g:asyncrun_bell = 1
+        " 设置 F10 打开/关闭 Quickfix 窗口
+        nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
+        " 编译单个文件
+        nnoremap <silent> <F9> :AsyncRun gcc "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+        " 按 F5 运行
+        " 用双引号引起来避免文件名包含空格，
+        " “-cwd=$(VIM_FILEDIR)” 的意思是在文件所在目录运行可执行，后面可执行使用了全路径，避免 linux 下面当前路径加 “./” 而 windows 不需要的跨平台问题。
+        " 参数 `-raw` 表示输出不用匹配错误检测模板 (errorformat) ，直接原始内容输出到 quickfix 窗口。
+        " 这样你可以一边编辑一边 F9 编译，出错了可以在 quickfix 窗口中按回车直接跳转到错误的位置，编译正确就接着执行。
+        nnoremap <silent> <F5> :AsyncRun -raw -cwd=$(VIM_FILEDIR) "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+
+        " AsyncRun 识别当前文件的项目目录方式和 gutentags相同，从文件所在目录向上递归，
+        " 直到找到名为 “.git”, “.svn”, “.hg”或者 “.root”文件或者目录，如果递归到根目录还没找到，
+        " 那么文件所在目录就被当作项目目录，你重新定义项目标志
+        let g:asyncrun_rootmarks = ['.svn', '.git', '.root', '_darcs', 'build.xml']
+
+        " 在 AsyncRun 命令行中，用 “<root>” 或者 “$(VIM_ROOT)”来表示项目所在路径
+        " 定义按 F7 编译整个项目
+        nnoremap <silent> <F7> :AsyncRun -cwd=<root> make <cr>
+
+        " 继续配置用 F8 运行当前项目, 当然，你的 makefile 中需要定义怎么 run
+        nnoremap <silent> <F8> :AsyncRun -cwd=<root> -raw make run <cr>
+        " 接着按 F6 执行测试
+        nnoremap <silent> <F6> :AsyncRun -cwd=<root> -raw make test <cr>
+        " 如果你使用了 cmake 的话，还可以照葫芦画瓢，定义 F4 为更新 Makefile 文件，如果不用 cmake 可以忽略
+        "nnoremap <silent> <F4> :AsyncRun -cwd=<root> cmake . <cr>
+
+        "if WINDOWS()
+        "    " 在 Windows 下使用 -mode=4 选项可以跟 Visual Studio 执行命令行工具一样，弹出一个新的 cmd.exe窗口来运行程序或者项目
+        "    nnoremap <silent> <F5> :AsyncRun -cwd=$(VIM_FILEDIR) -mode=4 "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+        "    nnoremap <silent> <F8> :AsyncRun -cwd=<root> -mode=4 make run <cr>
+        "endif
+
     " }
 " }
 
