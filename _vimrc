@@ -321,9 +321,11 @@
     set foldenable                  " Auto fold code
     set foldmethod=manual
     set foldcolumn=1
-    set list
-    set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+    " 将尾行的空格,tab等显示出来
+    "set list
+    "set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
     " 常规模式下用空格键来开关光标行所在折叠（注：zR 展开所有折叠，zM 关闭所有折叠）
+
     nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
     " 自动保存折叠
     "au BufWinLeave * silent mkview
