@@ -94,6 +94,25 @@
     set mouse=a                 " Automatically enable mouse usage
     set mousehide               " Hide the mouse cursor while typing
     scriptencoding utf-8
+    "  < 编码配置 >
+    " -----------------------------------------------------------------------------
+    " 注：使用utf-8格式后，软件与程序源码、文件路径不能有中文，否则报错
+    set encoding=utf-8                                    "设置gvim内部编码，默认不更改
+    set fileencoding=utf-8                                "设置当前文件编码，可以更改，如：gbk（同cp936）
+    set fileencodings=ucs-bom,utf-8,gbk,cp936,latin-1     "设置支持打开的文件的编码
+
+    " 文件格式，默认 ffs=dos,unix
+    set fileformat=unix                                   "设置新（当前）文件的<EOL>格式，可以更改，如：dos（windows系统常用）
+    set fileformats=unix,dos,mac                          "给出文件的<EOL>格式类型
+
+    if (WINDOWS() && has("gui_running"))
+        "解决菜单乱码
+        source $VIMRUNTIME/delmenu.vim
+        source $VIMRUNTIME/menu.vim
+
+        "解决consle输出乱码
+        language messages zh_CN.utf-8
+    endif
 
     if has('clipboard')
         if has('unnamedplus')  " When possible use + register for copy-paste
