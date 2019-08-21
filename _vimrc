@@ -430,7 +430,7 @@
     let g:gutentags_define_advanced_commands = 1
     let g:gutentags_generate_on_empty_buffer = 1    " open database
 
-    let g:gutentags_trace = 1
+    "let g:gutentags_trace = 1
 " }
 
 " vim-preview {
