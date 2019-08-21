@@ -424,6 +424,7 @@
         " restore_view confict with gutentags to not find ctags
         "Plug 'vim-scripts/restore_view.vim'
         Plug 'skywind3000/asyncrun.vim'
+        Plug 'mhinz/vim-signify'
 
     call plug#end()
 " }
