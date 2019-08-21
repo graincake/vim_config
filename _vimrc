@@ -293,16 +293,16 @@
                                     " Selected characters/lines in visual mode
     endif
 
-    if has('statusline')
-        set laststatus=2
+    "if has('statusline')
+    "    set laststatus=2
 
-        " Broken down into easily includeable segments
-        set statusline=%<%f\                     " Filename
-        set statusline+=%w%h%m%r                 " Options
-        set statusline+=\ [%{&ff}/%Y]            " Filetype
-        set statusline+=\ [%{getcwd()}]          " Current dir
-        set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-    endif
+    "    " Broken down into easily includeable segments
+    "    set statusline=%<%f\                     " Filename
+    "    set statusline+=%w%h%m%r                 " Options
+    "    set statusline+=\ [%{&ff}/%Y]            " Filetype
+    "    set statusline+=\ [%{getcwd()}]          " Current dir
+    "    set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+    "endif
 
     set backspace=indent,eol,start  " Backspace for dummies
     set linespace=0                 " No extra spaces between rows
@@ -527,16 +527,18 @@
 
     " See `:echo g:airline_theme_map` for some more choices
     " Default in terminal vim is 'dark'
-    if isdirectory(expand("~/.vim/plugged/vim-airline-themes/"))
-        if !exists('g:airline_theme')
-            let g:airline_theme = 'solarized'
-        endif
-        if !exists('g:airline_powerline_fonts')
-            " Use the default set of separators with a few customizations
-            let g:airline_left_sep='›'  " Slightly fancier than '>'
-            let g:airline_right_sep='‹' " Slightly fancier than '<'
-        endif
-    endif
+    "if isdirectory(expand("~/.vim/plugged/vim-airline-themes/"))
+    "    if !exists('g:airline_theme')
+    "        let g:airline_theme = 'solarized'
+    "    endif
+    "    if !exists('g:airline_powerline_fonts')
+    "        " Use the default set of separators with a few customizations
+    "        let g:airline_left_sep='›'  " Slightly fancier than '>'
+    "        let g:airline_right_sep='‹' " Slightly fancier than '<'
+    "    endif
+    "endif
+        let g:airline_section_b = '%{strftime("%c")}'
+        let g:airline_section_y = 'BN: %{bufnr("%")}'
     " }
 
     " CSyntaxAfter {
