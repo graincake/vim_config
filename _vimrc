@@ -404,7 +404,7 @@
         "Plug 'ChrisKempson/Tomorrow-Theme'
         " language specific enhance
         Plug 'vim-scripts/c.vim'
-        Plug 'vim-scripts/a.vim'
+        Plug 'tpope/vim-projectionist'
         Plug 'octol/vim-cpp-enhanced-highlight'
         Plug 'vim-scripts/cSyntaxAfter'
         " enhanced std\c++14 highlight
