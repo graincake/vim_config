@@ -439,6 +439,7 @@
         Plug 'sgur/vim-textobj-parameter'
 
         Plug 'justinmk/vim-dirvish'
+        Plug 'tpope/vim-surround'
 
     call plug#end()
 " }
@@ -629,6 +630,23 @@
         " i, 和 a, ：参数对象，写代码一半在修改，现在可以用 di, 或 ci, 一次性删除/改写当前参数
         " ii 和 ai ：缩进对象，同一个缩进层次的代码，可以用 vii 选中，dii / cii 删除或改写
         " if 和 af ：函数对象，可以用 vif / dif / cif 来选中/删除/改写函数的内容
+    " }
+
+    " surround {
+    " command mode
+    " ds                删除一个配对符号 (delete a surrounding)
+    " cs                更改一个配对符号 (change a surrounding)
+    " ys                增加一个配对符号 (yank a surrounding)
+    " yS                在新的行增加一个配对符号并进行缩进
+    " yss               在整行增加一个配对符号
+    " ySs/Yss           在整行增加一个配对符号，配对符号单独成行并进行缩进
+    " visual mode
+    " s                增加一个配对符号
+    " S                在整行增加一个配对符号，配对符号单独成行并进行缩进
+    "
+    " insert mode
+    " Ctrl + s                    增加一个配对符号
+    " Ctrl +s, Ctrl +s        在整行增加一个配对符号，配对符号单独成行并进行缩进
     " }
 " }
 
