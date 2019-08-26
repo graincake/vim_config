@@ -24,7 +24,16 @@ sudo make install
 
 pip install pygments
 
+YouCompleteMe安装
+注意：需要能连google，因为需要下载一些go语言的工具
+ vim plugin安装完后，执行下面命令下载没有安装完的库
+ cd ~/.vim/plugged/YouCompleteMe
+ git submodule update --init --recursive
+ # 如果不需要java的语义补全，可不用加--java-completer
+ python3 ./install.py --clang-completer --java-completer
+
 参考配置文档
 https://www.jianshu.com/p/110b27f8361b  (2018 更新下vim 插件  --- 知乎)
 https://zhuanlan.zhihu.com/p/33046090  (YouCompleteMe 中容易忽略的配置 ---- 韦易笑)
 https://www.zhihu.com/question/47691414 (如何在 Linux 下利用 Vim 搭建 C/C++ 开发环境? ---- 韦易笑）
+https://github.com/ycm-core/YouCompleteMe/blob/master/README.md#installation (官方说明)

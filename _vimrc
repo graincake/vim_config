@@ -440,7 +440,7 @@
 
         Plug 'justinmk/vim-dirvish'
         Plug 'tpope/vim-surround'
-        Plug 'Valloric/YouCompleteMe', {'do':'./install.py --clang-completer --go-completer --java-completer'}
+        Plug 'ycm-core/YouCompleteMe'
 
     call plug#end()
 " }
@@ -674,8 +674,8 @@
     " 使用 Ctrl+y 主动触发语义补全
     noremap <c-y> <NOP>
     " 修改补全列表配色
-    highlight PMenu ctermfg=0 ctermbg=242 guifg=black guibg=darkgrey
-    highlight PMenuSel ctermfg=242 ctermbg=8 guifg=darkgrey guibg=black
+    "highlight PMenu ctermfg=0 ctermbg=242 guifg=black guibg=darkgrey
+    "highlight PMenuSel ctermfg=242 ctermbg=8 guifg=darkgrey guibg=black
     " 追加语义触发条件，使输入2个字符即可自动触发语义补全
     let g:ycm_semantic_triggers =  {
                 \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
