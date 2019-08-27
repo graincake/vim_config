@@ -443,6 +443,7 @@
         Plug 'ycm-core/YouCompleteMe'
         Plug 'SirVer/ultisnips'
         Plug 'honza/vim-snippets'
+        Plug 'tenfyzhong/CompleteParameter.vim'
 
     call plug#end()
 " }
@@ -739,6 +740,14 @@
 
     au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger     . " <C-R>=g:UltiSnips_Complete()<cr>"
     au InsertEnter * exec "inoremap <silent> " .     g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>"
+    " }
+
+    " CompleteParameter.vim {
+    inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+    smap <c-k> <Plug>(complete_parameter#goto_next_parameter)
+    imap <c-k> <Plug>(complete_parameter#goto_next_parameter)
+    smap <c-l> <Plug>(complete_parameter#goto_previous_parameter)
+    imap <c-l> <Plug>(complete_parameter#goto_previous_parameter)
     " }
 " }
 
