@@ -444,6 +444,7 @@
         Plug 'SirVer/ultisnips'
         Plug 'honza/vim-snippets'
         Plug 'tenfyzhong/CompleteParameter.vim'
+        Plug 'vim-scripts/TxtBrowser'
 
     call plug#end()
 " }
