@@ -388,7 +388,9 @@
         Plug 'justinmk/vim-dirvish'
         Plug 'tpope/vim-surround'
         Plug 'ycm-core/YouCompleteMe'
+        " UltiSnips 只是个引擎，需要搭配预设的代码块才能运转起来
         Plug 'SirVer/ultisnips'
+        " 代码块集合
         Plug 'honza/vim-snippets'
         Plug 'tenfyzhong/CompleteParameter.vim'
         " *: 向前搜索，#: 向后搜索
