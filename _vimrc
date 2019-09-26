@@ -611,52 +611,53 @@
     " }
 
     " youcompleteme {
-    "关闭自动弹出的原型预览窗口
-    set completeopt=menu,menuone
-    let g:ycm_add_preview_to_completeopt = 0
-    " 关闭诊断信息
-    let g:ycm_show_diagnostics_ui = 0
-    " 对于 C-family 工程，ycm 需要配置文件 .ycm_extra_conf.py 才能进行语义补全提示(include 库之类的路径)，
-    " ycm 尝试从当前目录往上查找读取 .ycm_extra_conf.py 文件导入，最后如果没有找到就使用这个默认配置文件（参考插件例子 ~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py）。
-    " 如果自己工程编译参数，include 不同，可以拷贝默认配置文件修改 flags 后直接放在工程目录下。也可以使用 ycm 提供的 配置文件生成工具
-    "let g:ycm_global_ycm_extra_conf= '~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
-    let g:ycm_global_ycm_extra_conf= '~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
-    "导入工程自己的conf时提示确认
-    let g:ycm_confirm_extra_conf = 0
-    let g:ycm_server_log_level = 'info'
-    " 输入两个字符自动弹出基于符号的补全
-    let g:ycm_min_num_identifier_candidate_chars = 2
-    let g:ycm_collect_identifiers_from_comments_and_strings = 1
-    let g:ycm_complete_in_strings=1
-    " 触发语义补全的快捷键
-    let g:ycm_key_invoke_completion = '<c-y>'
-    set completeopt=menu,menuone
-    " 使用 Ctrl+y 主动触发语义补全
-    noremap <c-y> <NOP>
-    " 修改补全列表配色
-    "highlight PMenu ctermfg=0 ctermbg=242 guifg=black guibg=darkgrey
-    "highlight PMenuSel ctermfg=242 ctermbg=8 guifg=darkgrey guibg=black
-    " 追加语义触发条件，使输入2个字符即可自动触发语义补全
-    let g:ycm_semantic_triggers =  {
-                \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
-                \ 'cs,lua,javascript': ['re!\w{2}'],
-                \ }
-    " 避免编辑白名单外的文件类型时 YCM也在那分析半天
-    let g:ycm_filetype_whitelist = {
-                \ "c":1,
-                \ "cpp":1,
-                \ "go":1,
-                \ "python":1,
-                \ "sh":1,
-                \ "zsh":1,
-                \ }
+        "关闭自动弹出的原型预览窗口
+        set completeopt=menu,menuone
+        let g:ycm_add_preview_to_completeopt = 0
+        " 关闭诊断信息
+        let g:ycm_show_diagnostics_ui = 0
+        " 对于 C-family 工程，ycm 需要配置文件 .ycm_extra_conf.py 才能进行语义补全提示(include 库之类的路径)，
+        " ycm 尝试从当前目录往上查找读取 .ycm_extra_conf.py 文件导入，最后如果没有找到就使用这个默认配置文件（参考插件例子 ~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py）。
+        " 如果自己工程编译参数，include 不同，可以拷贝默认配置文件修改 flags 后直接放在工程目录下。也可以使用 ycm 提供的 配置文件生成工具
+        "let g:ycm_global_ycm_extra_conf= '~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
+        let g:ycm_global_ycm_extra_conf= '~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
+        "导入工程自己的conf时提示确认
+        let g:ycm_confirm_extra_conf = 0
+        let g:ycm_server_log_level = 'info'
+        " 输入两个字符自动弹出基于符号的补全
+        let g:ycm_min_num_identifier_candidate_chars = 2
+        let g:ycm_collect_identifiers_from_comments_and_strings = 1
+        let g:ycm_complete_in_strings=1
+        " 触发语义补全的快捷键
+        let g:ycm_key_invoke_completion = '<c-y>'
+        set completeopt=menu,menuone
+        " 使用 Ctrl+y 主动触发语义补全
+        noremap <c-y> <NOP>
+        " 修改补全列表配色
+        "highlight PMenu ctermfg=0 ctermbg=242 guifg=black guibg=darkgrey
+        "highlight PMenuSel ctermfg=242 ctermbg=8 guifg=darkgrey guibg=black
+        " 追加语义触发条件，使输入2个字符即可自动触发语义补全
+        let g:ycm_semantic_triggers =  {
+                    \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+                    \ 'cs,lua,javascript': ['re!\w{2}'],
+                    \ }
+        " 避免编辑白名单外的文件类型时 YCM也在那分析半天
+        let g:ycm_filetype_whitelist = {
+                    \ "c":1,
+                    \ "cpp":1,
+                    \ "go":1,
+                    \ "python":1,
+                    \ "sh":1,
+                    \ "zsh":1,
+                    \ }
 
-    let g:ycm_filetype_blacklist = {
-                \ 'markdown' : 1,
-                \ 'text' : 1,
-                \ 'pandoc' : 1,
-                \ 'infolog' : 1,
-                \}
+        let g:ycm_filetype_blacklist = {
+                    \ 'markdown' : 1,
+                    \ 'text' : 1,
+                    \ 'pandoc' : 1,
+                    \ 'infolog' : 1,
+                    \}
+        " }
     " }
 
     " ultisnips {
