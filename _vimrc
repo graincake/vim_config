@@ -538,28 +538,20 @@
     "}
 
     " vim-airline {
-    " Set configuration options for the statusline plugin vim-airline.
-    " Use the powerline theme and optionally enable powerline symbols.
-    " To use the symbols , , , , , , and .in the statusline
-    " segments add the following to your .vimrc.before.local file:
-    "   let g:airline_powerline_fonts=1
-    " If the previous symbols do not render for you then install a
-    " powerline enabled font.
-
-    " See `:echo g:airline_theme_map` for some more choices
-    " Default in terminal vim is 'dark'
-    "if isdirectory(expand("~/.vim/plugged/vim-airline-themes/"))
-    "    if !exists('g:airline_theme')
-    "        let g:airline_theme = 'solarized'
-    "    endif
-    "    if !exists('g:airline_powerline_fonts')
-    "        " Use the default set of separators with a few customizations
-    "        let g:airline_left_sep='›'  " Slightly fancier than '>'
-    "        let g:airline_right_sep='‹' " Slightly fancier than '<'
-    "    endif
-    "endif
-        let g:airline_section_b = '%{strftime("%c")}'
-        let g:airline_section_y = 'BN: %{bufnr("%")}'
+        set t_Co=256      "在windows中用xshell连接打开vim可以显示色彩
+        let g:airline#extensions#tabline#enabled = 1   " 是否打开tabline
+        "这个是安装字体后 必须设置此项"
+        let g:airline_powerline_fonts = 1
+        set laststatus=2  "永远显示状态栏
+        let g:airline_theme='bubblegum' "选择主题
+        let g:airline#extensions#tabline#enabled=1    "Smarter tab line: 显示窗口tab和buffer
+        "let g:airline#extensions#tabline#left_sep = ' '  "separater
+        "let g:airline#extensions#tabline#left_alt_sep = '|'  "separater
+        "let g:airline#extensions#tabline#formatter = 'default'  "formater
+        let g:airline_left_sep = '▶'
+        let g:airline_left_alt_sep = '❯'
+        let g:airline_right_sep = '◀'
+        let g:airline_right_alt_sep = '❮'
     " }
 
     " CSyntaxAfter {
