@@ -336,7 +336,7 @@
 " }
 
 " Use Plugin Manager Plugs {
-    call plug#begin('~/.vim/plugged')
+silent! call plug#begin('~/.vim/plugged')
         " gtags and gnu global support
         Plug 'vim-scripts/gtags.vim'
         " 提供gtags数据库的无缝更新及连接, 它能自动更新工程的.tag文件
