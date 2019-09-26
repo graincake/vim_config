@@ -378,7 +378,7 @@
         Plug 'mhinz/vim-signify'
 
         " 文本对象
-
+        Plug 'kana/vim-textobj-user'
         Plug 'kana/vim-textobj-indent'
         Plug 'kana/vim-textobj-syntax'
         Plug 'kana/vim-textobj-function', { 'for':['c', 'cpp', 'vim', 'java'] }
@@ -397,6 +397,8 @@
         "Plug 'vim-scripts/ShowMarks'
         " Ctrl-P or Ctrl-N to complete the word in command mode
         Plug 'vim-scripts/CmdlineComplete'
+        " 插入模式下emacs式光标移动命令
+        Plug 'tpope/vim-rsi'
 
     call plug#end()
 " }
