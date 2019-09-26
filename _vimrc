@@ -360,7 +360,6 @@
 
         " 文件/buffer模糊匹配快速切换, 也可显示函数列表
         Plug 'Yggdroot/LeaderF'
-        Plug 'vim-scripts/matchit.zip'
         Plug 'vim-airline/vim-airline'
         Plug 'vim-airline/vim-airline-themes'
 
