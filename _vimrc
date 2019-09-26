@@ -364,10 +364,6 @@
         Plug 'vim-airline/vim-airline'
         Plug 'vim-airline/vim-airline-themes'
 
-        "Plug 'Shougo/neocomplcache.vim'
-
-        "Plug 'vim-scripts/OmniCppComplete'
-        "Plug 'msanders/snipmate.vim'
         Plug 'vim-scripts/std_c.zip'
 
         " restore_view confict with gutentags to not find ctags
@@ -387,12 +383,19 @@
         " 当前文档按"-"号进入目录
         Plug 'justinmk/vim-dirvish'
         Plug 'tpope/vim-surround'
+
+        " if can't use YCP, take this two instead
+        "Plug 'Shougo/neocomplcache.vim'
+        "Plug 'vim-scripts/OmniCppComplete'
         Plug 'ycm-core/YouCompleteMe'
+
         " UltiSnips 只是个引擎，需要搭配预设的代码块才能运转起来
         Plug 'SirVer/ultisnips'
         " 代码块集合
         Plug 'honza/vim-snippets'
+
         Plug 'tenfyzhong/CompleteParameter.vim'
+
         " *: 向前搜索，#: 向后搜索
         Plug 'vim-scripts/TxtBrowser'
 
