@@ -339,24 +339,26 @@
     call plug#begin('~/.vim/plugged')
         " gtags and gnu global support
         Plug 'vim-scripts/gtags.vim'
-        Plug 'vim-scripts/autopreview'
-        Plug 'vim-scripts/genutils'
+        " 提供gtags数据库的无缝更新及连接, 它能自动更新工程的.tag文件
         Plug 'ludovicchabant/vim-gutentags'
+        " 提供gtags数据库无缝切换
         Plug 'skywind3000/gutentags_plus'
+        " 预览
         Plug 'skywind3000/vim-preview'
         " color
-        Plug 'altercation/vim-colors-solarized'
-        Plug 'lifepillar/vim-solarized8'      " solarized8
+        " Tomorrow-Night-Eighties 这个配色方案在这个包里
         "Plug 'ChrisKempson/Tomorrow-Theme'
         " language specific enhance
         Plug 'vim-scripts/c.vim'
-        Plug 'tpope/vim-projectionist'
         Plug 'octol/vim-cpp-enhanced-highlight'
         Plug 'vim-scripts/cSyntaxAfter'
         " enhanced std\c++14 highlight
-        Plug 'Mizuchi/STL-Syntax'
+        Plug 'vim-scripts/STL-improved'
         Plug 'bronson/vim-trailing-whitespace'
-            " file lookup
+        " 头文件与源文件相互跳转
+        Plug 'tpope/vim-projectionist'
+
+        " 文件/buffer模糊匹配快速切换, 也可显示函数列表
         Plug 'Yggdroot/LeaderF'
         Plug 'vim-scripts/matchit.zip'
         Plug 'vim-airline/vim-airline'
@@ -367,24 +369,34 @@
         "Plug 'vim-scripts/OmniCppComplete'
         "Plug 'msanders/snipmate.vim'
         Plug 'vim-scripts/std_c.zip'
+
         " restore_view confict with gutentags to not find ctags
         "Plug 'vim-scripts/restore_view.vim'
+        " 异步执行shell命令，可用于编译运行程序
         Plug 'skywind3000/asyncrun.vim'
+        " 显示文件与上次提交的差异
         Plug 'mhinz/vim-signify'
 
-        Plug 'kana/vim-textobj-user'
+        " 文本对象
+
         Plug 'kana/vim-textobj-indent'
         Plug 'kana/vim-textobj-syntax'
         Plug 'kana/vim-textobj-function', { 'for':['c', 'cpp', 'vim', 'java'] }
         Plug 'sgur/vim-textobj-parameter'
 
+        " 当前文档按"-"号进入目录
         Plug 'justinmk/vim-dirvish'
         Plug 'tpope/vim-surround'
         Plug 'ycm-core/YouCompleteMe'
         Plug 'SirVer/ultisnips'
         Plug 'honza/vim-snippets'
         Plug 'tenfyzhong/CompleteParameter.vim'
+        " *: 向前搜索，#: 向后搜索
         Plug 'vim-scripts/TxtBrowser'
+
+        "Plug 'vim-scripts/ShowMarks'
+        " Ctrl-P or Ctrl-N to complete the word in command mode
+        Plug 'vim-scripts/CmdlineComplete'
 
     call plug#end()
 " }
@@ -563,6 +575,12 @@
         let g:cpp_no_function_highlight = 1
     " }
 
+    " vim-signify {
+        " `:SignifyDiff`，可以左右分屏对比提交前后记录
+        " 强制显示侧边栏
+        " set signcolumn=yes
+    " }
+    "
     " textobject {
         " i, 和 a, ：参数对象，写代码一半在修改，现在可以用 di, 或 ci, 一次性删除/改写当前参数
         " ii 和 ai ：缩进对象，同一个缩进层次的代码，可以用 vii 选中，dii / cii 删除或改写
