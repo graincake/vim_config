@@ -256,13 +256,6 @@
 
 " Vim UI {
 
-    "if filereadable(expand("~/.vim/plugged/vim-colors-solarized/colors/solarized.vim"))
-    "    let g:solarized_termcolors=256
-    "    let g:solarized_termtrans=1
-    "    let g:solarized_contrast="normal"
-    "    let g:solarized_visibility="normal"
-    "    "colorscheme solarized             " Load a colorscheme
-    "endif
     colorscheme Tomorrow-Night-Eighties               "终端配色方案
 
     "highlight Functions，这可以高亮函数
@@ -284,17 +277,6 @@
         set showcmd                 " Show partial commands in status line and
                                     " Selected characters/lines in visual mode
     endif
-
-    "if has('statusline')
-    "    set laststatus=2
-
-    "    " Broken down into easily includeable segments
-    "    set statusline=%<%f\                     " Filename
-    "    set statusline+=%w%h%m%r                 " Options
-    "    set statusline+=\ [%{&ff}/%Y]            " Filetype
-    "    set statusline+=\ [%{getcwd()}]          " Current dir
-    "    set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-    "endif
 
     set backspace=indent,eol,start  " Backspace for dummies
     set linespace=0                 " No extra spaces between rows
@@ -350,40 +332,6 @@
         endif
         "set term=builtin_ansi       " Make arrow and other keys work
     endif
-    "if !WINDOWS()
-    "    " Uncomment the following to have Vim jump to the last position when
-    "    " reopening a file
-    "    if has("autocmd")
-    "        au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-    "    endif
-    "    if has('gui_running')
-    "        " Source a global configuration file if available
-    "        if filereadable("/etc/vim/gvimrc.local")
-    "            source /etc/vim/gvimrc.local
-    "        endif
-    "        set mousemodel=popup           " 在gvim下右键弹出菜单
-    "    else
-    "        " This line should not be removed as it ensures that various options are
-    "        " properly set to work with the Vim-related packages available in Debian.
-    "        runtime! debian.vim
-
-    "        " Vim5 and later versions support syntax highlighting. Uncommenting the next
-    "        " line enables syntax highlighting by default.
-    "        if has("syntax")
-    "            syntax on
-    "        endif
-
-    "        set mouse=a                    " 在任何模式下启用鼠标
-    "        set t_Co=256                   " 在终端启用256色
-    "        set backspace=2                " 设置退格键可用
-
-    "        " Source a global configuration file if available
-    "        if filereadable("/etc/vim/vimrc.local")
-    "            source /etc/vim/vimrc.local
-    "        endif
-    "    endif
-
-    "endif
 
 " }
 
