@@ -522,7 +522,7 @@ silent! call plug#begin('~/.vim/plugged')
 
     " vim-trailing-whitespace {
         " 下列文件类型中的行尾空格tab不高亮显示
-        "let g:extra_whitespace_ignored_filetypes = ['unite', 'mkd', 'h', 'hpp', 'c', 'cpp', 'py']
+        let g:extra_whitespace_ignored_filetypes = ['unite', 'mkd', 'h', 'hpp', 'c', 'cpp', 'py']
         map <leader><Space> :FixWhitespace<cr>
     " }
     " neocomplcache {
