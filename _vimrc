@@ -349,7 +349,8 @@ silent! call plug#begin('~/.vim/plugged')
         " Tomorrow-Night-Eighties 这个配色方案在这个包里
         "Plug 'ChrisKempson/Tomorrow-Theme'
         " language specific enhance
-        Plug 'vim-scripts/c.vim'
+        " auto add head-comment in .c file
+        " Plug 'vim-scripts/c.vim'
         Plug 'octol/vim-cpp-enhanced-highlight'
         Plug 'vim-scripts/cSyntaxAfter'
         " enhanced std\c++14 highlight
